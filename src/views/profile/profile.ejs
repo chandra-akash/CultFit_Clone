@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get Fitness Workouts, Gyms, Health Care, &amp; Healthy Food in India by Cult.fit</title>
+        <link rel="stylesheet" href="/static/profile/profile.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <!-- navbar -->
+        <nav class="navbar sticky-top">
+            <div class=" container-fluid">
+                <!-- logo -->
+                <div id="leftImg">
+                    <a href="/home"><img src="https://static.cure.fit/assets/images/curefit-v-man.svg"
+                            alt="cure.fit is an integrated platform for food, fitness and meditation"
+                            loading="lazy"></a>
+                </div>
+
+                <!-- middle options -->
+                <div2>
+                    <ul>
+                        <li><a href="/store"><img alt="LIVE" src="https://static.cure.fit/assets/images/Livefit.svg">
+                                <div>LIVE</div>
+                            </a></li>
+                        <li><a href="/store"><img alt="CULT" src="https://static.cure.fit/assets/images/cult-icon.svg">
+                                <div>CULT</div>
+                            </a></li>
+                        <li><a href="/store"><img alt="MIND" src="https://static.cure.fit/assets/images/mind-icon.svg">
+                                <div>MIND</div>
+                            </a></li>
+                        <li><a href="/care"><img alt="CARE" src="https://static.cure.fit/assets/images/carefit-blk.svg">
+                                <div>CARE</div>
+                            </a></li>
+                        <li><a href="/store"><img alt="STORE"
+                                    src="https://static.cure.fit/assets/images/store-icon.svg">
+                                <div>STORE</div>
+                            </a></li>
+                    </ul>
+                </div2>
+
+                <!-- right side options -->
+                <div3>
+
+                    <!-- cart -->
+                    <div-3 class="rhsNav" onclick="cart()"><img
+                            src="https://static.cure.fit/assets/images/cart-image.svg" alt="cart-image" loading="lazy">
+                    </div-3>
+
+                    <!-- login -->
+                    <div-2 class="rhsNav" id="popUpBtn">
+                        <img src="https://static.cure.fit/assets/images/user-image.svg">
+                        <div class="login-text">Login</div>
+                    </div-2>
+
+
+
+                </div3>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+
+        <div id="cont">
+            <div id="cont1">
+                <div id="details">
+                    <image id="prof" src="https://static.cure.fit/assets/images/user-default.png"></image>
+                    <div id="name">
+                        <span id="display_user_name">User</span>
+                        <p>VIEW PROFILE</p>
+                    </div>
+                </div>
+                <div id="items">
+                    <div id="item1">
+                        <span>Orders</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/cart-black.svg"></image>
+                    </div>
+                    <div id="item1">
+                        <span>Medical Records</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/health-profile-black.svg">
+                        </image>
+                    </div>
+                    <div id="item1">
+                        <span>Active Packs and Subscription</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/combined-shape-black.svg">
+                        </image>
+                    </div>
+                    <div id="item1">
+                        <span>Redeem Voucher</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/coupon-black.svg"></image>
+                    </div>
+                    <div id="item1">
+                        <span>Account</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/settings-black.svg"></image>
+                    </div>
+                    <div id="item1">
+                        <span>Support</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/support-black.svg"></image>
+                    </div>
+                    <div id="item1">
+                        <span>Logout</span>
+                        <image id="cartimg" src="https://static.cure.fit/assets/images/logout-black.svg">
+                        </image>
+                    </div>
+                </div>
+            </div>
+            <div id="cont2">
+                <image id="img2" src="https://static.cure.fit/assets/images/user-default.png"></image>
+                <p>PROFILE</p>
+                <div class="container">
+
+                    <form class="row g-3" action="/userDetails/<%=number._id%>" method="POST">
+                        <div class="col-md-6">
+                            <label for="userName" class="form-label">Name</label>
+                            <input type="text" class="form-control border-bottom" id="user_name" name="userName"
+                                placeholder="Your Name" onkeypress="nameUser()" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userPhoneNumber" class="form-label">PHONE NUMBER</label>
+                            <p class="form-control" id="user_number"><%=number.userNumber %> </p>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userGender" class="form-label">Gender</label><br>
+                            <div id="malefema">
+                                <image onclick="male()" id="maleImg" class="gender male"
+                                    src="https://static.cure.fit/assets/images/male-inactive.svg">
+                                </image>
+                                <div id="vertline"></div>
+                                <image onclick="female()" id="femaleImg" class="gender"
+                                    src="https://static.cure.fit/assets/images/female-inactive.svg">
+                                </image>
+                            </div>
+                            <input type="text" id='gender' name="userGender" placeholder="Your gender" value="">
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userDOB" class="form-label">Date Of Birth</label>
+                            <input type="date" class="form-control text-muted" id='user_dob' name="userDOB">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userEmail" class="form-label">EMAIL</label>
+                            <input type="email" class="form-control" id='user_email' name="userEmail"
+                                placeholder="All primary Email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userWorkEmail" class="form-label">WORK EMAIL</label>
+                            <input type="email" class="form-control" id='user_wrk_email' name="userWorkEmail"
+                                placeholder="Add Work Email">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div id="google">
+                    <image class="glogo" src="https://static.cure.fit/assets/images/google-new.svg"></image>
+                    <span class="text">Link Google</span>
+                </div>
+                <div id="fb">
+                    <image class="glogo" src="https://static.cure.fit/assets/images/facebook-new.svg"></image>
+                    <span class="text">Link Facebook</span>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="/static/profile/profile.js"></script>
+
+</html>
